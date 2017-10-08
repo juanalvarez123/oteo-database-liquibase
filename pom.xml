@@ -29,6 +29,12 @@
 				<liquibase.properties.file>stage.liquibase.properties</liquibase.properties.file>
 			</properties>
 		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+				<liquibase.properties.file>production.liquibase.properties</liquibase.properties.file>
+			</properties>
+		</profile>
 	</profiles>
 
 	<dependencies>
