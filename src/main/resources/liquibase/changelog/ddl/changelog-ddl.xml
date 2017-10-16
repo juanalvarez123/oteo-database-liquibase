@@ -10,4 +10,362 @@
 		</createTable>
 	</changeSet>
 
+	<changeSet author="juan.alvarez" id="1508125134533-1">
+		<createTable schemaName="public" tableName="defender">
+			<column name="defender_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(100)" />
+			<column name="age" type="numeric" />
+			<column name="sex" type="VARCHAR(20)" />
+			<column name="gender" type="VARCHAR(20)" />
+			<column name="population_group" type="VARCHAR(20)" />
+			<column name="profession" type="VARCHAR(100)" />
+			<column name="position" type="VARCHAR(100)" />
+			<column name="awards" type="VARCHAR(1000)" />
+			<column name="alive" type="BOOL" />
+			<column name="death_datetime" type="TIMESTAMPTZ" />
+			<column name="observation" type="VARCHAR(1000)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-3">
+		<createTable schemaName="public" tableName="human_right_violation">
+			<column name="human_right_violation_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="defender_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="attack" type="VARCHAR(200)" />
+			<column name="responsible" type="VARCHAR(50)" />
+			<column name="datetime" type="TIMESTAMPTZ" />
+			<column name="observation" type="VARCHAR(500)" />
+			<column name="link" type="VARCHAR(300)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-4">
+		<createTable schemaName="public" tableName="organization_defender">
+			<column name="defender_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="organization_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-5">
+		<createTable schemaName="public" tableName="defender_case_tracking">
+			<column name="defender_case_tracking_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="defender_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(200)" />
+			<column name="progress" type="VARCHAR(50)" />
+			<column name="datetime" type="TIMESTAMPTZ" />
+			<column name="observation" type="VARCHAR(500)" />
+			<column name="link" type="VARCHAR(300)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-6">
+		<createTable schemaName="public"
+			tableName="environmental_conflict_organization">
+			<column name="environmental_conflict_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="organization_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-7">
+		<createTable schemaName="public" tableName="company">
+			<column name="company_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(300)" />
+			<column name="type" type="VARCHAR(50)" />
+			<column name="country" type="VARCHAR(50)" />
+			<column name="participation" type="VARCHAR(1000)" />
+			<column name="description" type="VARCHAR(1000)" />
+			<column name="link" type="VARCHAR(300)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-8">
+		<createTable schemaName="public" tableName="organization">
+			<column name="organization_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(500)" />
+			<column name="country" type="VARCHAR(50)" />
+			<column name="place" type="VARCHAR(200)" />
+			<column name="class" type="VARCHAR(50)" />
+			<column name="type" type="VARCHAR(50)" />
+			<column name="goal" type="VARCHAR(1000)" />
+			<column name="link" type="VARCHAR(300)" />
+			<column name="active" type="BOOL" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-9">
+		<createTable schemaName="public" tableName="legislation">
+			<column name="legislation_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="country" type="VARCHAR(20)" />
+			<column name="datetime" type="TIMESTAMPTZ" />
+			<column name="organism" type="VARCHAR(50)" />
+			<column name="type" type="VARCHAR(50)" />
+			<column name="name" type="VARCHAR(500)" />
+			<column name="observation" type="VARCHAR(1000)" />
+			<column name="link" type="VARCHAR(300)" />
+			<column name="component" type="VARCHAR(50)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-10">
+		<createTable schemaName="public" tableName="environmental_conflict">
+			<column name="environmental_conflict_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="country" type="VARCHAR(50)" />
+			<column name="place" type="VARCHAR(100)" />
+			<column name="name" type="VARCHAR(300)" />
+			<column name="latitude" type="FLOAT4" />
+			<column name="longitude" type="FLOAT4" />
+			<column name="datetime" type="TIMESTAMPTZ" />
+			<column name="conflict" type="VARCHAR(50)" />
+			<column name="extractivism" type="VARCHAR(50)" />
+			<column name="resources" type="VARCHAR(50)" />
+			<column name="source" type="VARCHAR(100)" />
+			<column name="link" type="VARCHAR(300)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-11">
+		<createTable schemaName="public" tableName="activity_organization">
+			<column name="activity_organization_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="organization_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="strength_type" type="VARCHAR(50)" />
+			<column name="strength_description" type="VARCHAR(1000)" />
+			<column name="results" type="VARCHAR(1000)" />
+			<column name="result_name" type="VARCHAR(1000)" />
+			<column name="datetime" type="TIMESTAMPTZ" />
+			<column name="link" type="VARCHAR(300)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-12">
+		<createTable schemaName="public" tableName="environmental_conflict_company">
+			<column name="environmental_conflict_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="company_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-13">
+		<addPrimaryKey columnNames="environmental_conflict_id, company_id"
+			constraintName="PK_environmental_conflict_company" schemaName="public"
+			tableName="environmental_conflict_company" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-14">
+		<addPrimaryKey columnNames="environmental_conflict_id, organization_id"
+			constraintName="PK_environmental_conflict_organization" schemaName="public"
+			tableName="environmental_conflict_organization" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-15">
+		<addPrimaryKey columnNames="environmental_conflict_id"
+			constraintName="PK_environmental_conflict" schemaName="public"
+			tableName="environmental_conflict" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-16">
+		<addPrimaryKey columnNames="activity_organization_id, organization_id"
+			constraintName="PK_activity_organization" schemaName="public"
+			tableName="activity_organization" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-17">
+		<addPrimaryKey columnNames="organization_id"
+			constraintName="PK_organization" schemaName="public" tableName="organization" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-18">
+		<addPrimaryKey columnNames="legislation_id"
+			constraintName="PK_legislation" schemaName="public" tableName="legislation" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-19">
+		<addPrimaryKey columnNames="defender_case_tracking_id"
+			constraintName="PK_defender_case_tracking" schemaName="public"
+			tableName="defender_case_tracking" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-20">
+		<addPrimaryKey columnNames="human_right_violation_id"
+			constraintName="PK_human_right_violation" schemaName="public"
+			tableName="human_right_violation" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-21">
+		<addPrimaryKey columnNames="defender_id" constraintName="PK_defender"
+			schemaName="public" tableName="defender" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-22">
+		<addPrimaryKey columnNames="defender_id, organization_id"
+			constraintName="PK_organization_defender" schemaName="public"
+			tableName="organization_defender" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-23">
+		<addPrimaryKey columnNames="company_id" constraintName="PK_company"
+			schemaName="public" tableName="company" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-24">
+		<addForeignKeyConstraint baseColumnNames="defender_id"
+			baseTableName="defender_case_tracking" baseTableSchemaName="public"
+			constraintName="FK_defender_case_tracking_defender" deferrable="false"
+			initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+			referencedColumnNames="defender_id" referencedTableName="defender"
+			referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-25">
+		<addForeignKeyConstraint baseColumnNames="environmental_conflict_id"
+			baseTableName="environmental_conflict_organization"
+			baseTableSchemaName="public"
+			constraintName="FK_environmental_conflict_organization_environmental_conflict"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="environmental_conflict_id"
+			referencedTableName="environmental_conflict"
+			referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-26">
+		<addForeignKeyConstraint baseColumnNames="defender_id"
+			baseTableName="organization_defender" baseTableSchemaName="public"
+			constraintName="FK_organization_defender_defender" deferrable="false"
+			initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+			referencedColumnNames="defender_id" referencedTableName="defender"
+			referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-27">
+		<addForeignKeyConstraint baseColumnNames="environmental_conflict_id"
+			baseTableName="environmental_conflict_company" baseTableSchemaName="public"
+			constraintName="FK_environmental_conflict_company_environmental_conflict"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="environmental_conflict_id"
+			referencedTableName="environmental_conflict"
+			referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-28">
+		<addForeignKeyConstraint baseColumnNames="defender_id"
+			baseTableName="human_right_violation" baseTableSchemaName="public"
+			constraintName="FK_human_right_violation_defender" deferrable="false"
+			initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+			referencedColumnNames="defender_id" referencedTableName="defender"
+			referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-29">
+		<addForeignKeyConstraint baseColumnNames="organization_id"
+			baseTableName="environmental_conflict_organization"
+			baseTableSchemaName="public"
+			constraintName="FK_environmental_conflict_organization_organization"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="organization_id"
+			referencedTableName="organization" referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-30">
+		<addForeignKeyConstraint baseColumnNames="company_id"
+			baseTableName="environmental_conflict_company" baseTableSchemaName="public"
+			constraintName="FK_environmental_conflict_company_company"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="company_id"
+			referencedTableName="company" referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-31">
+		<addForeignKeyConstraint baseColumnNames="organization_id"
+			baseTableName="organization_defender" baseTableSchemaName="public"
+			constraintName="FK_organization_defender_organization" deferrable="false"
+			initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+			referencedColumnNames="organization_id" referencedTableName="organization"
+			referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-32">
+		<addForeignKeyConstraint baseColumnNames="organization_id"
+			baseTableName="activity_organization" baseTableSchemaName="public"
+			constraintName="FK_activity_organization_organization" deferrable="false"
+			initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+			referencedColumnNames="organization_id" referencedTableName="organization"
+			referencedTableSchemaName="public" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-33">
+		<createIndex indexName="FKI_defender_case_tracking_defender"
+			schemaName="public" tableName="defender_case_tracking" unique="false">
+			<column name="defender_id" />
+		</createIndex>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-34">
+		<createIndex indexName="FKI_activity_organization_organization"
+			schemaName="public" tableName="activity_organization" unique="false">
+			<column name="organization_id" />
+		</createIndex>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-35">
+		<createIndex indexName="FKI_organization_defender_organization"
+			schemaName="public" tableName="organization_defender" unique="false">
+			<column name="organization_id" />
+		</createIndex>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-36">
+		<createIndex indexName="FKI_human_right_violation_defender"
+			schemaName="public" tableName="human_right_violation" unique="false">
+			<column name="defender_id" />
+		</createIndex>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-37">
+		<createIndex indexName="FKI_environmental_conflict_organization_organization"
+			schemaName="public" tableName="environmental_conflict_organization"
+			unique="false">
+			<column name="organization_id" />
+		</createIndex>
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="1508125134533-38">
+		<createIndex indexName="FKI_environmental_conflict_company_company"
+			schemaName="public" tableName="environmental_conflict_company"
+			unique="false">
+			<column name="company_id" />
+		</createIndex>
+	</changeSet>
+
 </databaseChangeLog>
