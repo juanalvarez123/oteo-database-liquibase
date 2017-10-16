@@ -22,10 +22,10 @@
 			<column name="population_group" type="VARCHAR(20)" />
 			<column name="profession" type="VARCHAR(100)" />
 			<column name="position" type="VARCHAR(100)" />
-			<column name="awards" type="VARCHAR(1000)" />
+			<column name="awards" type="TEXT" />
 			<column name="alive" type="BOOL" />
 			<column name="death_datetime" type="TIMESTAMPTZ" />
-			<column name="observation" type="VARCHAR(1000)" />
+			<column name="observation" type="TEXT" />
 		</createTable>
 	</changeSet>
 
@@ -92,8 +92,8 @@
 			<column name="name" type="VARCHAR(300)" />
 			<column name="type" type="VARCHAR(50)" />
 			<column name="country" type="VARCHAR(50)" />
-			<column name="participation" type="VARCHAR(1000)" />
-			<column name="description" type="VARCHAR(1000)" />
+			<column name="participation" type="TEXT" />
+			<column name="description" type="TEXT" />
 			<column name="link" type="VARCHAR(300)" />
 		</createTable>
 	</changeSet>
@@ -106,10 +106,10 @@
 			<column name="name" type="VARCHAR(500)" />
 			<column name="country" type="VARCHAR(50)" />
 			<column name="place" type="VARCHAR(200)" />
-			<column name="class" type="VARCHAR(50)" />
+			<column name="organization_class" type="VARCHAR(50)" />
 			<column name="type" type="VARCHAR(50)" />
-			<column name="goal" type="VARCHAR(1000)" />
-			<column name="link" type="VARCHAR(300)" />
+			<column name="goal" type="TEXT" />
+			<column name="link" type="TEXT" />
 			<column name="active" type="BOOL" />
 		</createTable>
 	</changeSet>
@@ -124,7 +124,7 @@
 			<column name="organism" type="VARCHAR(50)" />
 			<column name="type" type="VARCHAR(50)" />
 			<column name="name" type="VARCHAR(500)" />
-			<column name="observation" type="VARCHAR(1000)" />
+			<column name="observation" type="TEXT" />
 			<column name="link" type="VARCHAR(300)" />
 			<column name="component" type="VARCHAR(50)" />
 		</createTable>
@@ -158,9 +158,9 @@
 				<constraints nullable="false" />
 			</column>
 			<column name="strength_type" type="VARCHAR(50)" />
-			<column name="strength_description" type="VARCHAR(1000)" />
-			<column name="results" type="VARCHAR(1000)" />
-			<column name="result_name" type="VARCHAR(1000)" />
+			<column name="strength_description" type="TEXT" />
+			<column name="results" type="TEXT" />
+			<column name="result_name" type="VARCHAR(200)" />
 			<column name="datetime" type="TIMESTAMPTZ" />
 			<column name="link" type="VARCHAR(300)" />
 		</createTable>
