@@ -26,6 +26,18 @@
 			<column name="alive" type="BOOL" />
 			<column name="death_datetime" type="TIMESTAMPTZ" />
 			<column name="observation" type="TEXT" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -42,6 +54,18 @@
 			<column name="datetime" type="TIMESTAMPTZ" />
 			<column name="observation" type="VARCHAR(500)" />
 			<column name="link" type="VARCHAR(300)" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -51,6 +75,18 @@
 				<constraints nullable="false" />
 			</column>
 			<column name="organization_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
@@ -69,6 +105,18 @@
 			<column name="datetime" type="TIMESTAMPTZ" />
 			<column name="observation" type="VARCHAR(500)" />
 			<column name="link" type="VARCHAR(300)" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -79,6 +127,18 @@
 				<constraints nullable="false" />
 			</column>
 			<column name="organization_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
@@ -95,6 +155,18 @@
 			<column name="participation" type="TEXT" />
 			<column name="description" type="TEXT" />
 			<column name="link" type="VARCHAR(300)" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -111,6 +183,18 @@
 			<column name="goal" type="TEXT" />
 			<column name="link" type="TEXT" />
 			<column name="active" type="BOOL" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -127,6 +211,18 @@
 			<column name="observation" type="TEXT" />
 			<column name="link" type="VARCHAR(300)" />
 			<column name="component" type="VARCHAR(50)" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -138,14 +234,26 @@
 			<column name="country" type="VARCHAR(50)" />
 			<column name="place" type="VARCHAR(100)" />
 			<column name="name" type="VARCHAR(300)" />
-			<column name="latitude" type="FLOAT4" />
-			<column name="longitude" type="FLOAT4" />
+			<column name="latitude" type="numeric" />
+			<column name="longitude" type="numeric" />
 			<column name="datetime" type="TIMESTAMPTZ" />
 			<column name="conflict" type="VARCHAR(50)" />
 			<column name="extractivism" type="VARCHAR(50)" />
 			<column name="resources" type="VARCHAR(50)" />
 			<column name="source" type="VARCHAR(100)" />
 			<column name="link" type="VARCHAR(300)" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -163,6 +271,18 @@
 			<column name="result_name" type="VARCHAR(200)" />
 			<column name="datetime" type="TIMESTAMPTZ" />
 			<column name="link" type="VARCHAR(300)" />
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
 
@@ -172,6 +292,18 @@
 				<constraints nullable="false" />
 			</column>
 			<column name="company_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_datetime" type="TIMESTAMPTZ">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_by" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="modified_datetime" type="TIMESTAMPTZ">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
@@ -212,7 +344,7 @@
 	</changeSet>
 
 	<changeSet author="juan.alvarez" id="1508125134533-19">
-		<addPrimaryKey columnNames="defender_case_tracking_id"
+		<addPrimaryKey columnNames="defender_case_tracking_id, defender_id"
 			constraintName="PK_defender_case_tracking" schemaName="public"
 			tableName="defender_case_tracking" />
 	</changeSet>
