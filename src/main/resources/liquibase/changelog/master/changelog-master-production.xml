@@ -7,4 +7,5 @@
 	<include file="src/main/resources/liquibase/changelog/ddl/changelog-ddl.xml" />
 	<include file="src/main/resources/liquibase/changelog/dml/changelog-dml.xml" />
 	<include file="src/main/resources/liquibase/changelog/data-for-production/changelog-data-for-production.xml" />
+
 </databaseChangeLog>
