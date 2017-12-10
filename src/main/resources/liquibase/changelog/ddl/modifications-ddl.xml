@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+	<changeSet author="juan.alvarez" id="null-organization_id">
+		<dropPrimaryKey constraintName="PK_activity_organization" schemaName="public"
+			tableName="activity_organization" />
+		<sql dbms="postgresql">
+			ALTER TABLE activity_organization ALTER COLUMN organization_id DROP NOT NULL
+		</sql>
+		<addPrimaryKey columnNames="activity_organization_id" constraintName="PK_activity_organization"
+			schemaName="public" tableName="activity_organization" />
+	</changeSet>
+
+	<changeSet author="juan.alvarez" id="change-defender_case_tracking-pk">
+		<dropPrimaryKey constraintName="PK_defender_case_tracking" schemaName="public"
+			tableName="defender_case_tracking" />
+		<renameColumn newColumnName="case_id" oldColumnName="defender_case_tracking_id"
+			schemaName="public" tableName="defender_case_tracking" />
+		<addColumn schemaName="public" tableName="defender_case_tracking" >
+			<column name="tracking_id" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+		<addPrimaryKey columnNames="tracking_id" constraintName="PK_defender_case_tracking"
+			schemaName="public" tableName="defender_case_tracking" />
+	</changeSet>
+
+</databaseChangeLog>
